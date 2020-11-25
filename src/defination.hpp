@@ -4,7 +4,7 @@
 #include <utility>
 
 #define range(container) (std::make_pair((container).begin(), (container).end()))
-#define apply_pair(pr) (rg).first, (rg).second
+#define apply_pair(pr) (pr).first, (pr).second
 #define apply_container(container) (container).begin(), (container).end()
 
 #endif
