@@ -47,7 +47,7 @@ std::vector<int> rev;
     for (int i = 0; i < this->size(); ++i)
       (this->operator[](i) *= v) %= mods;
   }
-  Poly<Container, CovSysT> operator*=(Poly<Container, CovSysT> g) {
+  Poly<Container, CovSysT>& operator*=(Poly<Container, CovSysT> g) {
     Poly<Container, CovSysT>& f = *this;
     f.resize(f.size() * 2);
     g.resize(g.size() * 2);
@@ -56,6 +56,7 @@ std::vector<int> rev;
     for (int i = 0; i < f.size(); ++i)
       (f[i] *= g[i]) %= mods;
     f.intt();
+    return f;
   }
   Poly<Container, CovSysT> inv() {
     const Poly& f = *this;
